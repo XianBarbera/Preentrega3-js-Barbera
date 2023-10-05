@@ -1,0 +1,14 @@
+{
+  "name": "preentrega3--47050-barbera",
+  "version": "1.0.0",
+  "description": "adicionando sass a mi proyecto",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "sass": "1.68.0"
+  },
+  "author": "Ian Barbera",
+  "license": "ISC"
+}
