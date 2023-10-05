@@ -4,7 +4,9 @@
   "description": "adicionando sass a mi proyecto",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "sass scss:css",
+    "watch:scss": "sass --watch scss:css",
+    "build": "npm run scss"
   },
   "devDependencies": {
     "sass": "1.68.0"
