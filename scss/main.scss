@@ -1,4 +1,65 @@
+$background-color: rgb(207, 205, 205);
+$nav-background-color: rgb(235, 235, 58);
+$font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+$text-color: rgb(3, 1, 117);
+$container-margin: 10px;
+$form-width: 400px;
+$box-shadow-color: rgb(165, 165, 165);
+
 body {
+  background: $background-color;
   text-align: center;
+}
+
+nav {
+  background: $nav-background-color;
+}
+
+.logo-title {
+  font-family: $font-family;
+  color: $text-color;
+  margin-top: 20px;
+}
+
+.logo-nav {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.container {
+  margin-bottom: $container-margin;
+}
+
+form {
+  width: $form-width;
+}
+
+.box-shadow {
+  box-shadow: 3px 3px 3px $box-shadow-color;
+}
+
+.card-custom {
+  width: calc(25% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.row-custom::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main {
   margin: 50px;
+}
+
+.btn-carrito {
+  margin: 50px;
+}
+
+.bold {
+  font-weight: bolder;
 }

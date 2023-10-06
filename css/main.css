@@ -1,6 +1,59 @@
 body {
+  background: rgb(207, 205, 205);
   text-align: center;
+}
+
+nav {
+  background: rgb(235, 235, 58);
+}
+
+.logo-title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgb(3, 1, 117);
+  margin-top: 20px;
+}
+
+.logo-nav {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.container {
+  margin-bottom: 10px;
+}
+
+form {
+  width: 400px;
+}
+
+.box-shadow {
+  box-shadow: 3px 3px 3px rgb(165, 165, 165);
+}
+
+.card-custom {
+  width: calc(25% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.row-custom::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main {
   margin: 50px;
+}
+
+.btn-carrito {
+  margin: 50px;
+}
+
+.bold {
+  font-weight: bolder;
 }
 
 /*# sourceMappingURL=main.css.map */
