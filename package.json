@@ -12,5 +12,8 @@
     "sass": "1.68.0"
   },
   "author": "Ian Barbera",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "toastify-js": "^1.12.0"
+  }
 }
