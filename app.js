@@ -227,6 +227,12 @@ function cargarProductos(productos) {
       const idProducto = +boton.dataset.id;
       const producto = bd.registroPorId(idProducto);
       carrito.agregar(producto);
+      Swal.fire({
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
   }
 }
