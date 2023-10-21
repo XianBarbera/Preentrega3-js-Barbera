@@ -1,15 +1,18 @@
 body {
-  background: rgb(207, 205, 205);
+  background-image: url(../images/backgroundbana.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
 }
 
 nav {
-  background: rgb(235, 235, 58);
+  background: rgb(0, 0, 0);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .logo-title {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: rgb(3, 1, 117);
+  color: rgb(255, 255, 255);
   margin-top: 20px;
 }
 
@@ -28,7 +31,7 @@ form {
 }
 
 .box-shadow {
-  box-shadow: 3px 3px 3px rgb(165, 165, 165);
+  box-shadow: 3px 3px 3px rgb(32, 32, 32);
 }
 
 .card-custom {
@@ -54,6 +57,50 @@ main {
 
 .bold {
   font-weight: bolder;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #e90000;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: #f1f1f1;
+  border: 2px solid #e90000;
+  border-radius: 5px;
+}
+
+.btnCategoria {
+  list-style: none;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li:hover {
+  color: #e90000;
+}
+
+.carousel {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

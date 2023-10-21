@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Japi Lager",
+    "precio": 500,
+    "categoria": "cerveza rubia",
+    "imagen": "./images/lager.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Japi Ipa",
+    "precio": 600,
+    "categoria": "cerveza ipa",
+    "imagen": "./images/ipa.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Japi Negra",
+    "precio": 500,
+    "categoria": "cerveza negra",
+    "imagen": "./images/negra.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Japi Roja",
+    "precio": 600,
+    "categoria": "cerveza roja",
+    "imagen": "./images/roja.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Japi Ipa X6",
+    "precio": 3200,
+    "categoria": "cerveza ipa",
+    "imagen": "./images/ipagroup.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Japi Lager X6",
+    "precio": 2800,
+    "categoria": "cerveza rubia",
+    "imagen": "./images/lagergroup.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Japi Roja X6",
+    "precio": 3200,
+    "categoria": "cerveza roja",
+    "imagen": "./images/rojagroup.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Japi Negra X6",
+    "precio": 2800,
+    "categoria": "cerveza negra",
+    "imagen": "./images/negragroup.jpg"
+  }
+]

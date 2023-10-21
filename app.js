@@ -11,61 +11,14 @@ class Producto {
 class BaseDeDatos {
   constructor() {
     this.productos = [];
-    this.agregarRegistro(
-      1,
-      "Japi Lager",
-      500,
-      "cerveza rubia",
-      "./images/lager.jpg"
-    );
-    this.agregarRegistro(2, "Japi Ipa", 600, "cerveza ipa", "./images/ipa.jpg");
-    this.agregarRegistro(
-      3,
-      "Japi Negra",
-      500,
-      "cerveza negra",
-      "./images/negra.jpg"
-    );
-    this.agregarRegistro(
-      4,
-      "Japi Roja",
-      600,
-      "cerveza roja",
-      "./images/roja.jpg"
-    );
-    this.agregarRegistro(
-      5,
-      "Japi Ipa X6",
-      3200,
-      "cerveza ipa",
-      "./images/ipagroup.jpg"
-    );
-    this.agregarRegistro(
-      6,
-      "Japi Lager X6",
-      2800,
-      "cerveza rubia",
-      "./images/lagergroup.jpg"
-    );
-    this.agregarRegistro(
-      7,
-      "Japi Roja X6",
-      3200,
-      "cerveza roja",
-      "./images/rojagroup.jpg"
-    );
-    this.agregarRegistro(
-      8,
-      "Japi Negra X6",
-      2800,
-      "cerveza negra",
-      "./images/negragroup.jpg"
-    );
+    this.cargarRegistros();
   }
 
-  agregarRegistro(id, nombre, precio, categoria, imagen) {
-    const producto = new Producto(id, nombre, precio, categoria, imagen);
-    this.productos.push(producto);
+  async cargarRegistros() {
+    const resultado = await fetch("./json/productos.json");
+    this.productos = await resultado.json();
+    cargarProductos(this.productos);
+    console.log(this.productos);
   }
 
   traerRegistros() {
@@ -80,6 +33,10 @@ class BaseDeDatos {
     return this.productos.filter((producto) =>
       producto.nombre.toLowerCase().includes(palabra.toLowerCase())
     );
+  }
+
+  registrosPorCategoria(categoria) {
+    return this.productos.filter((producto) => producto.categoria == categoria);
   }
 }
 
@@ -173,8 +130,6 @@ class Carrito {
   }
 }
 
-const bd = new BaseDeDatos();
-
 const spanCantidadProductosModal = document.querySelector(
   "#cantidadProductosModal"
 );
@@ -185,8 +140,22 @@ const spanTotalCarritoModal = document.querySelector("#totalCarritoModal");
 const divProductos = document.querySelector("#productos");
 const inputBuscar = document.querySelector("#inputBuscar");
 const botonComprar = document.querySelector("#botonComprar");
+const botonesCategoria = document.querySelectorAll(".btnCategoria");
+
+const bd = new BaseDeDatos();
 
 const carrito = new Carrito();
+
+botonesCategoria.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria;
+    if (categoria == "todas") {
+      cargarProductos(bd.traerRegistros());
+    } else {
+      cargarProductos(bd.registrosPorCategoria(categoria));
+    }
+  });
+});
 
 cargarProductos(bd.traerRegistros());
 
@@ -227,6 +196,12 @@ function cargarProductos(productos) {
       const idProducto = +boton.dataset.id;
       const producto = bd.registroPorId(idProducto);
       carrito.agregar(producto);
+      Swal.fire({
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
   }
 }
